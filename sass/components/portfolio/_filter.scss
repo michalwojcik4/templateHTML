@@ -1,0 +1,39 @@
+.filter {
+    padding: 0 0 50px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        @include reset-list;
+    }
+
+    &__button {
+        color: getColor(defaultFontColor);
+        cursor: $hovercursor;
+        @include font-size(500, 16px, 1.625, 0.03em);
+        text-align: center;
+        background-color: getColor(bg-color-btn-filter);
+        border-radius: 4px;
+        @include reset-input;
+        padding: 6px 22px;
+        transition: background-color $timetransition, color $timetransition, box-shadow $timetransition;
+
+        &:hover,
+        &:focus {
+            background-color: getColor(colorbrand);
+            color: getColor(filter-button-color);
+            box-shadow: $portfoliofilterbuttonshadow;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .filter {
+
+        &__list {
+            justify-content: center;
+        }
+    }
+}

@@ -1,0 +1,103 @@
+.header-line {
+    border-bottom: 1px solid getColor(headerline);
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 15px 25px;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .menu-toggle {
+        display: none;
+    }
+    
+    .menu-container {
+        display: none;
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0;
+}
+
+.nav {
+    @include reset-list;
+    display: flex;
+    gap: 46px;
+
+    &:first-child {
+        margin-left: 93px;
+    } 
+
+    &__link {
+        text-decoration: none;
+        @include font-size(500, 14px, 1.14, 0.02em);
+        color: getColor(defaultFontColor);
+        transition: color $timetransition;
+
+        &:hover,
+        &:focus {
+            color: getColor(colorbrand);
+        }
+
+        &--active {
+            position: relative;
+            color: getColor(colorbrand);
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                margin-top: 29px;
+                right: 0;
+                left: 0;
+                height: 4px;
+                border-radius: 2px;
+                background-color: getColor(colorbrand);
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.contact {
+    @include reset-list;
+    display: flex;
+    gap: 30px;
+
+    &__link {
+        text-decoration: none;
+        @include font-size(500, 14px, 1.14, 0.02em);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: getColor(text-grey);
+        fill: getColor(text-grey);
+        transition: color $timetransition, fill $timetransition;
+
+        &:hover,
+        &:focus {
+            color: getColor(colorbrand);
+            fill: getColor(colorbrand);
+        }
+    }
+    
+    &__icon {
+
+        &--email {
+            @include size-wh(16px, 12px);
+        }
+
+        &--tel {
+            @include size-wh(10px, 16px);
+        }
+    }
+}

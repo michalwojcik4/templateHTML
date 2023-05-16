@@ -1,0 +1,116 @@
+@media screen and (max-width: 768px) {
+    
+    .page-header {
+        padding: 10px 15px;
+    }
+
+    .menu {
+        display: none;
+        }
+
+    .menu-container   {
+        position: fixed;
+        top: 0;
+        left: 0;
+        @include size-wh(100%, 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 64px;
+        padding: 48px 40px;
+        background-color: getColor(menu-container-bg);
+        transform: translateX(100%);
+        transition: transform $timetransition;
+
+        &.is-open {
+            transform: translateX(0);
+        }
+    }
+
+    .menu-toggle {
+        @include size-wh(40px, 40px);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        cursor: $hovercursor;
+        @include reset-input;
+        fill: getColor(defaultFontColor);
+
+        &--close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+        }  
+
+        &:hover,
+        &:focus {
+            fill: getColor(colorbrand);
+        }
+    }
+
+    .mobile-nav {
+        @include reset-list;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        flex-grow: 1;
+
+        &__link {
+            text-decoration: none;
+            @include font-size(500, 40px, 1.175, 0.02em);
+            color: getColor(defaultFontColor);
+            transition: color $timetransition;
+
+            &:hover,
+            &:focus {
+                color: getColor(colorbrand);
+            }
+        }
+    }
+
+    .mobile-contact {
+        @include reset-list;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        &__link {
+            text-decoration: none;
+
+            &--tel {
+                @include font-size(500, 34px, 1.176, 0.02em);
+                color: getColor(colorbrand);
+            }
+
+            &--email {
+                @include font-size(500, 24px, 1.16, 0.02em);
+                color: getColor(text-grey);
+            }
+        }
+    }
+
+    .mobile-socialmedia {
+        @include reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &__item {
+            padding-right: 10px;
+            border-right: 1px solid rgba(33, 33, 33, 0.2);
+
+            &:last-child {
+                padding: 0;
+                border: 0;
+            }
+        }
+
+        &__link {
+            text-decoration: none;
+            @include font-size(500, 18px, 1.22, 0.02em);
+            color: getColor(colorbrand);
+        }
+    }
+}

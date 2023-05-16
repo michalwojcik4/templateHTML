@@ -1,0 +1,204 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size-wh(100%, 100%);
+    z-index: 1;
+    background-color: getColor(backdrop);
+    opacity: 1;
+    animation: opacityopen $timetransition forwards;
+}
+
+.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    animation: opacityclose $timetransition forwards;
+}
+
+.modal {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: getColor(bg-modal);
+    box-shadow: $modalboxshadow;
+    border-radius: 4px;
+    padding: 40px;
+
+    &__button-close {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        cursor: $hovercursor;
+        outline: 0;
+        top: 8px;
+        right: 8px;
+        @include size-wh(30px, 30px);
+        border-radius: 50%;
+        fill: getColor(modal-button-close);
+        background-color: getColor(modal-bg-button-close);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: background-color $timetransition, fill $timetransition;
+
+        &:hover,
+        &:focus {
+            fill: getColor(colorbrand);
+        }
+    }
+
+    &__title {
+        @include font-size(700, 20px, 1.15, 0.03em);
+        text-align: center;
+        margin: 0 0 12px;
+    }
+}
+
+.focuslabel {
+    fill: getColor(colorbrand);
+    border-color: getColor(colorbrand);
+    transition: border-color $timetransition, fill $timetransition;
+}
+
+.contact-details {
+
+    &__text {
+        margin: 0;
+        @include font-size(400, 12px, 1.166, 0.01em);
+        color: getColor(text-grey);
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap:9px;
+        border: 1px solid getColor(contact-label);
+        border-radius: 4px;
+        margin: 4px 0 10px;
+        padding: 8px 9px;
+
+        &:focus-within {
+            @extend .focuslabel;
+        }
+    }
+
+    &__input {
+        flex-grow: 1;
+        @include font-size(400, 12px, 1.166, 0.01em);
+        outline: 0;
+        border: 0;
+        fill: getColor(defaultFontColor);
+    }
+}
+
+.contact-comment {
+
+    &__text {
+        margin: 0;
+        @include font-size(400, 12px, 1.166, 0.01em);
+        color: getColor(text-grey);
+    }
+
+    &__label {
+        display: block;
+        border: 1px solid getColor(contact-label);
+        border-radius: 4px;
+        padding: 12px 16px;
+        margin: 4px 0 20px;
+        min-height: 120px;
+
+        &:focus-within {
+            @extend .focuslabel;
+        }
+    }
+
+    &__textarea {
+        @include reset-input;
+        width: 100%;
+        resize: none;
+    }
+}
+
+.contact-checkbox {
+    display: flex;
+    align-items: center;
+    padding: 0 0 30px;
+    margin: 0;
+
+    &__input {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        &:checked + .contact-checkbox__icon {
+            background-color: getColor(colorbrand);
+            transition: background-color $timetransition;
+            @include reset-input;
+        }
+    }
+
+    &__icon {
+        fill: getColor(text-white);
+        padding: 2px;
+        border: 1px solid getColor(defaultFontColor);
+        border-radius: 2px;
+        cursor: $hovercursor;
+        margin-right: 8px;
+    }
+
+    &__text {
+        @include font-size(400, 12px, 1.16, 0.03em);
+        color: getColor(text-grey);
+        margin: 0;
+    }
+
+    &__link {
+        margin: 0;
+        @include font-size(400, 12px, 1.16, 0.03em);
+        color: getColor(colorbrand);
+    }
+ }
+
+ .contact-form__button {
+    @extend %blue-buttons;
+    margin: 0 auto;
+    padding: 10px 76px;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .contact-checkbox {
+        padding: 0 14px 30px;
+
+        &__text {
+            font-size: 14px;
+            letter-spacing: 1.714;
+        }
+
+        &__link {
+            font-size: 14px;
+            letter-spacing: 1.714;
+        }
+    }
+}
+
+@keyframes opacityopen {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes opacityclose {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

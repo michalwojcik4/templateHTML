@@ -1,0 +1,44 @@
+.client {
+
+    &__list {
+        @include reset-list;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__icon {
+        display: block;
+        min-width: 210px;
+        height: 92px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fill: getColor(client-icon);
+        border: 1px solid getColor(client-icon);
+        border-radius: 4px;
+        transition: fill $timetransition, border-color $timetransition;
+        &:hover,
+        &:focus{
+            fill: getColor(colorbrand);
+            border-color: getColor(colorbrand);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .client {
+        &__icon {
+            min-width: 226px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .client {
+        &__icon {
+            min-width: 170px;
+        }
+    }
+}

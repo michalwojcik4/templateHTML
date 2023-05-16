@@ -1,0 +1,50 @@
+.strengths {
+
+    &__list {
+        @include reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        padding: 25px 0;
+        background-color: getColor(bg-strengths-box);
+    }
+
+    &__title {
+        @include font-size(700, 14px, 1.14, 0.03em);
+        text-align: center;
+        text-transform: uppercase;
+        margin: 30px 0 10px 0;
+    }
+
+    &__text {
+        @include font-size(400, 14px, 1.714, 0.03em);
+        color: getColor(text-grey);
+        margin: 0;
+    }
+}
+
+@media screen  and (min-width: 768px) {
+    
+    .strengths {
+
+        &__item{
+            max-width: 354px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .strengths {
+
+        &__item{
+            max-width: 270px;
+        }
+    }
+}

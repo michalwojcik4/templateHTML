@@ -1,0 +1,37 @@
+.team {
+
+    &--background {
+        background-color: getColor(bg-team);
+    }
+
+    &__list {
+        @include reset-list;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    &__figure {
+        margin: 0;
+        background-color: getColor(bg-team-figure);
+        box-shadow: $teamfigureshadow;
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    &__figcaption {
+        padding: 30px 0;
+        @include font-size(400, 16px, 1.187, 0.03em);
+        text-align: center;
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        margin: 0;   
+    }
+    
+    &__text {
+        color: getColor(text-grey);
+        margin: 10px 0 16px;
+    }
+}

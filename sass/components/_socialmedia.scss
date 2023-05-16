@@ -1,0 +1,36 @@
+.socialmedia {
+    @include reset-list;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    &__icon {
+        display: block;
+        @include size-wh(44px, 44px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: background-color $timetransition, fill $timetransition;
+       
+        &--team {
+            fill: getColor(socialmedia-icon);
+
+            &:hover,
+            &:focus {
+                background-color: getColor(colorbrand);
+                fill: getColor(socialmedia-icon-hover);
+            }
+        }
+
+        &--footer {
+            fill: getColor(socialmedia-icon-footer);
+            background-color: getColor(bg-socialmedia-icon-footer);
+
+            &:hover,
+            &:focus {
+                background-color: getColor(colorbrand);
+            }
+        }
+    }
+}

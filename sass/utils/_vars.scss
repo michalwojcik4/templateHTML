@@ -1,0 +1,88 @@
+$colors: (
+    'defaultFontColor': #212121,
+    'headerline': #ECECEC,
+    'colorbrand': #2196F3,
+    'logoheader': #000, 
+    'logofooter': #FFF,
+    'background-main-footer': #2F303A,
+    'text-grey': #757575,
+    'text-white': #FFF,
+    'bg-strengths-box': #F5F4FA,
+    'our-job-bg-text': rgba(47, 48, 58, 0.8),
+    'bg-team': #F5F4FA,
+    'bg-team-figure': #FFF,
+    'socialmedia-icon': #AFB1B8,
+    'socialmedia-icon-hover': #FFF,
+    'socialmedia-icon-footer': #FFF,
+    'bg-socialmedia-icon-footer': rgba(255, 255, 255, 0.1),
+    'client-icon': #AFB1B8,
+    'address-link': rgba(255, 255, 255, 0.6),
+    'newsletter-form-color': rgba(255, 255, 255, 0.6),
+    'newsletter-form-border': rgba(255, 255, 255, 0.3),
+    'backdrop': rgba(0, 0, 0, 0.2),
+    'bg-modal': #FFF,
+    'filter-button-color': #FFF,
+    'product-figcaption-border': #EEE,
+    'bg-description-box': rgba(33, 150, 243, 0.9),
+    'modal-button-close': #AFB1B8,
+    'modal-bg-button-close': #FFF,
+    'contact-label': rgba(33, 33, 33, 0.2),
+    'bg-color-btn-filter': #F5F4FA,
+    'menu-container-bg': #FFF,
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+}
+
+$defaultFont: Roboto, sans-serif;
+$secondFont: Raleway, sans-serif;
+$bodywidth: 100%;
+$maxwidthcontainer: 1200px;
+$timetransition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$maxwidthbanner: 1600px;
+$baneropacity: linear-gradient(rgba(47, 48, 58, 0.4),rgba(47, 48, 58, 0.4));
+$hovercursor: pointer;
+$shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+$modalboxshadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+$teamfigureshadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+$portfoliofilterbuttonshadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+$portfolioproductshadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+@mixin reset-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin font-size($font-weight, $font-size, $line-height, $letter-spacing) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin size-wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin reset-input {
+    outline: 0;
+    border: 0;
+}
+
+%blue-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    @include font-size(700, 16px, 1.875, 0.06em);
+    color: getColor(text-white);
+    background-color: getColor(colorbrand);
+    box-shadow: $shadow;
+    border-radius: 4px;
+    border: 0;
+    outline: 0;
+    cursor: $hovercursor;
+}

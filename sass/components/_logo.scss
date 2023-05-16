@@ -1,0 +1,24 @@
+.logo {
+    font-family: $secondFont;
+    text-decoration: none;
+    @include font-size(700, 26px, 1.19, 0.03em);
+
+    &__span {
+        color: getColor(colorbrand);
+    }
+
+    &--header {
+        color: getColor(logoheader);
+    }
+
+    &--footer {
+        color: getColor(logofooter);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .logo {
+        @include font-size(700, 24px, 1.16, 0.03em);
+    }
+}

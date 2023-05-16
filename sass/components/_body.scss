@@ -1,0 +1,38 @@
+body {
+    font-family: $defaultFont;
+    color: getColor('defaultFontColor');
+    width: $bodywidth;
+}
+
+.container {
+    max-width: $maxwidthcontainer;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 94px 15px;
+}
+
+img { 
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.section-title {
+    @include font-size(700, 36px, 1.16, 0.03em);
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .section {
+        padding: 60px 15px;;
+    }
+
+    .section-title {
+        font-size: 28px;
+        letter-spacing: 1.78;
+    }
+}
