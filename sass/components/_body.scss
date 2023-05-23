@@ -9,6 +9,10 @@ body {
     margin: 0 auto;
 }
 
+.section {
+    padding: 60px 15px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 
     .container {
@@ -21,31 +25,26 @@ body {
     .container {
         max-width: $max-width-container-desktop;
     }
+    
+    .section {
+        padding: 94px 15px;
+    }
 }
 
 @media screen and (max-width: 767px) {
 
     .container-footer {
-
         max-width: 480px;
     }
 }
  
-.section {
-    padding: 94px 15px;
-}
-
 .section-title {
     @include font-size(700, 36px, 1.16, 0.03em);
     text-align: center;
     margin: 0 0 30px;
 }
 
-@media screen and (max-width: 1200px) {
-
-    .section {
-        padding: 60px 15px;;
-    }
+@media screen and (max-width: 1199px) {
 
     .section-title {
         font-size: 28px;

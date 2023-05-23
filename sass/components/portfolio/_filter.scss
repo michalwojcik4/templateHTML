@@ -31,9 +31,17 @@
 @media screen and (min-width: 768px) {
 
     .filter {
+        padding: 0 0 30px;
 
         &__list {
             justify-content: center;
         }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .filter {
+        padding: 0 0 50px;
     }
 }

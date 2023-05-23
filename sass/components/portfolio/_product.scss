@@ -57,9 +57,18 @@
     
     .product {
 
-        &__item{
+        &__item {
             max-width: 354px;
-            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .product {
+
+        &__item {
+            max-width: 370px;
         }
     }
 }
