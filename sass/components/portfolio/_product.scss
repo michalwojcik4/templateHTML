@@ -8,6 +8,9 @@
     }
 
     &__item {
+        border-left:1px solid getColor(product-figcaption-border);
+        border-bottom:1px solid getColor(product-figcaption-border);
+        border-right:1px solid getColor(product-figcaption-border);
         
         &:hover {
             box-shadow: $portfolioproductshadow;
@@ -30,9 +33,6 @@
 
     &__figcaption {
         padding: 20px 23px 19px;
-        border-left:1px solid getColor(product-figcaption-border);
-        border-bottom:1px solid getColor(product-figcaption-border);
-        border-right:1px solid getColor(product-figcaption-border);
     }
 
     &__title {
