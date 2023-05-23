@@ -1,5 +1,5 @@
 .filter {
-    padding: 0 0 50px;
+    padding: 0 0 40px;
 
     &__list {
         display: flex;
@@ -15,8 +15,8 @@
         text-align: center;
         background-color: getColor(bg-color-btn-filter);
         border-radius: 4px;
-        @include reset-input;
         padding: 6px 22px;
+        @include reset-input;
         transition: background-color $timetransition, color $timetransition, box-shadow $timetransition;
 
         &:hover,

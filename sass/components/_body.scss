@@ -5,18 +5,34 @@ body {
 }
 
 .container {
-    max-width: $maxwidthcontainer;
+    max-width: 480px;
     margin: 0 auto;
 }
 
-.section {
-    padding: 94px 15px;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .container {
+        max-width: $max-width-container-tablet;
+    }
 }
 
-img { 
-    display: block;
-    max-width: 100%;
-    height: auto;
+@media screen and (min-width: 1200px) {
+
+    .container {
+        max-width: $max-width-container-desktop;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .container-footer {
+
+        max-width: 480px;
+    }
+}
+ 
+.section {
+    padding: 94px 15px;
 }
 
 .section-title {
@@ -35,4 +51,10 @@ img {
         font-size: 28px;
         letter-spacing: 1.78;
     }
+}
+
+img { 
+    display: block;
+    max-width: 100%;
+    height: auto;
 }

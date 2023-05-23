@@ -3,8 +3,8 @@
     &__list {
         @include reset-list;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 30px;
     }
 
@@ -29,7 +29,17 @@
     }
 }
 
-@media screen  and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+    
+    .strengths {
+        
+        &__title {
+            text-align: left;
+        }
+    }
+}
+
+@media screen  and (min-width: 768px) and (max-width: 1199px) {
     
     .strengths {
 

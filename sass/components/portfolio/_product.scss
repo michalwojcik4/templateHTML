@@ -3,7 +3,6 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
         gap: 30px;
         @include reset-list;
     }
@@ -51,6 +50,17 @@
     &__image {
         position: relative;
         overflow: hidden;
+    }
+}
+
+@media screen  and (min-width: 768px) and (max-width: 1199px) {
+    
+    .product {
+
+        &__item{
+            max-width: 354px;
+            height: auto;
+        }
     }
 }
 
